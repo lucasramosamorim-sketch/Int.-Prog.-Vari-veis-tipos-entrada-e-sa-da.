@@ -1,13 +1,14 @@
-# Exercício 01 — Ficha digital
+# Exercício 03 — Condições com if e else
 nome = input("Digite seu nome: ").strip()
 idade = int(input("Digite sua idade: "))
-turma = input("Digite sua turma: ").strip().upper()
-altura = float(input("Digite sua altura: ").replace(",", "."))
-programou = input("Já programou? (sim/não): ").strip().lower() == "sim"
+idade_minima = 14
 
-print("\n--- FICHA DO ALUNO ---")
-print(f"Nome: {nome}")
-print(f"Idade: {idade} anos")
-print(f"Turma: {turma}")
-print(f"Altura: {altura:.2f} m")
-print(f"Já programou: {programou}")
+print("\n--- VERIFICAÇÃO DE ACESSO ---")
+
+if idade >= idade_minima:
+    print(f"{nome}, seu acesso à oficina foi liberado.")
+    print("Você já possui a idade mínima exigida.")
+else:
+    anos_faltantes = idade_minima - idade
+    print(f"{nome}, seu acesso ainda não foi liberado.")
+    print(f"Faltam {anos_faltantes} ano(s) para atingir a idade mínima.")
